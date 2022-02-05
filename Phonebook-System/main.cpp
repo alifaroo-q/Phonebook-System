@@ -2,11 +2,13 @@
 
 void showMenu();
 void showBanner();
+void userChoice();
 
 int main() {
 
 	showBanner();
 	showMenu();
+	userChoice();
 	system("pause>0");
 }
 
@@ -26,4 +28,36 @@ void showMenu() {
 	std::cout << " 5 - Search Contact (by name)\n";
 	std::cout << " 6 - Display Contacts\n";
 	std::cout << "\n 0 - Exit";
+}
+
+void userChoice() {
+	int choice;
+	std::cout << "\n\n Select Option : ";
+	std::cin >> choice;
+
+	switch (choice) {
+	case 1:
+		//
+		break;
+	case 2:
+		//
+		break;
+	case 3:
+		//
+		break;
+	case 4:
+		//
+		break;
+	case 5:
+		//
+		break;
+	case 6:
+		//
+		break;
+	case 0:
+		//
+		break;
+	default:
+		std::cout << "\n Select the correct option";
+	}
 }
