@@ -1,26 +1,27 @@
 #include <string>
 #pragma once
 
-class Contact
-{
+class Contact {
 private:
 	int id;
-	int phone;
+	std::string phone;
 	std::string name;
 	std::string email;
 
 public:
-	Contact(int, int, std::string, std::string);
+	Contact(int, std::string, std::string, std::string);
 	~Contact();
 
 	int getId();
 	void setId(int);
-	int getPhone();
-	void setPhone(int);
+	std::string getPhone();
+	void setPhone(std::string);
 	std::string getName();
 	void setName(std::string);
 	std::string getEmail();
 	void setEmail(std::string);
+
+	std::string toString();
 
 };
 

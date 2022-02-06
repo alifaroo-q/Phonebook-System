@@ -1,21 +1,17 @@
-#include <iostream>
-
-void showMenu();
-void showBanner();
-void userChoice();
+#include "main.h"
 
 int main() {
 
-	showBanner();
+	showBanner("CONTACT PHONEBOOK");
 	showMenu();
 	userChoice();
 	system("pause>0");
 }
 
-void showBanner() {
+void showBanner(const char* heading) {
 	std::cout << "\n\n\n";
 	std::cout << "\t\t\t\t\t=========================\n";
-	std::cout << "\t\t\t\t\t    CONTACT PHONEBOOK\n";
+	std::cout << "\t\t\t\t\t    " << heading << "\n";
 	std::cout << "\t\t\t\t\t=========================\n";
 }
 
@@ -37,7 +33,7 @@ void userChoice() {
 
 	switch (choice) {
 	case 1:
-		//
+		addNewContact();
 		break;
 	case 2:
 		//
@@ -52,7 +48,7 @@ void userChoice() {
 		//
 		break;
 	case 6:
-		//
+		displayContacts();
 		break;
 	case 0:
 		//

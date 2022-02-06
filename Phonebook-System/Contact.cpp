@@ -1,9 +1,9 @@
 #include "Contact.h"
 
-Contact::Contact(int id, int phone, std::string name, std::string email) {
+Contact::Contact(int id, std::string phone, std::string name, std::string email) {
     this->id = id;
     this->phone = phone;
-    this->name = name;
+    setName(name);
     this->email = email;
 }
 
@@ -17,11 +17,11 @@ void Contact::setId(int id) {
     this->id = id;
 }
 
-int Contact::getPhone() {
+std::string Contact::getPhone() {
     return phone;
 }
 
-void Contact::setPhone(int phone) {
+void Contact::setPhone(std::string phone) {
     this->phone = phone;
 }
 
@@ -30,6 +30,15 @@ std::string Contact::getName() {
 }
 
 void Contact::setName(std::string name) {
+    char space = ' ';
+    char rep = '-';
+
+    for (int i = 0; i < name.size(); i++) {
+        if (name[i] == space) {
+            name[i] = rep;
+        }
+    }
+
     this->name = name;
 }
 
@@ -39,4 +48,9 @@ std::string Contact::getEmail() {
 
 void Contact::setEmail(std::string email) {
     this->email = email;
+}
+
+std::string Contact::toString() {
+    std::string str = std::to_string(id) + " " + phone + " " + name + " " + email;
+    return str;
 }
