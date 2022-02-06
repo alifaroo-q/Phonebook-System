@@ -4,7 +4,6 @@
 #include <iostream>
 #include <string>
 #include <sstream>
-#include <vector>
 
 void displayContacts() {
 	system("cls");

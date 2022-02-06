@@ -42,7 +42,7 @@ void userChoice() {
 		//
 		break;
 	case 4:
-		//
+		searchById();
 		break;
 	case 5:
 		//
@@ -51,7 +51,7 @@ void userChoice() {
 		displayContacts();
 		break;
 	case 0:
-		//
+		exit(EXIT_SUCCESS);
 		break;
 	default:
 		std::cout << "\n Select the correct option";

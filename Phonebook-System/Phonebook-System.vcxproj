@@ -143,12 +143,15 @@
     <ClCompile Include="Contact.cpp" />
     <ClCompile Include="displayContacts.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="searchContact.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="addNewContact.h" />
+    <ClInclude Include="BST.cpp" />
     <ClInclude Include="Contact.h" />
     <ClInclude Include="displayContacts.h" />
     <ClInclude Include="main.h" />
+    <ClInclude Include="searchContact.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
