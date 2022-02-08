@@ -36,10 +36,10 @@ void userChoice() {
 		addNewContact();
 		break;
 	case 2:
-		//
+		removeContact();
 		break;
 	case 3:
-		//
+		modifyContact();
 		break;
 	case 4:
 		searchById();

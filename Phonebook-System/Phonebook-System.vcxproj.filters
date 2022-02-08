@@ -30,6 +30,12 @@
     <ClCompile Include="searchContact.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="removeContact.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="modifyContact.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Contact.h">
@@ -48,6 +54,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="BST.cpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="removeContact.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="modifyContact.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -143,6 +143,8 @@
     <ClCompile Include="Contact.cpp" />
     <ClCompile Include="displayContacts.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="modifyContact.cpp" />
+    <ClCompile Include="removeContact.cpp" />
     <ClCompile Include="searchContact.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -151,6 +153,8 @@
     <ClInclude Include="Contact.h" />
     <ClInclude Include="displayContacts.h" />
     <ClInclude Include="main.h" />
+    <ClInclude Include="modifyContact.h" />
+    <ClInclude Include="removeContact.h" />
     <ClInclude Include="searchContact.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
