@@ -9,8 +9,7 @@ void displayContacts() {
 	system("cls");
 	showBanner("PHONEBOOK CONTACTS");
 
-	std::ifstream file;
-	file.open("contact_data.dat", std::ios::in);
+	std::ifstream file("contact_data.dat", std::ios::in);
 	std::string data[4];
 	int i = 0;
 
@@ -36,4 +35,7 @@ void displayContacts() {
 	
 		file.close();
 	}
+
+	std::cout << "\n";
+	returnToMain();
 }

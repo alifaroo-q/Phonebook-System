@@ -1,3 +1,4 @@
 #pragma once
+#include "BST.cpp"
 
-void searchById();
+void searchById(BST*);

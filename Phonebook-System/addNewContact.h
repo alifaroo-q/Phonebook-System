@@ -1,5 +1,7 @@
 #pragma once
 #include "Contact.h"
+#include "BST.cpp"
 
-void addNewContact();
-Contact* createContact();
+void addNewContact(BST*);
+Contact* createContact(BST*);
+bool isUniqueID(int, BST*);

@@ -1,6 +1,6 @@
 #pragma once
-#include "Contact.h"
 #include <vector>
+#include "Contact.h"
 
 class Node {
 public:
@@ -59,7 +59,8 @@ private:
 			return root->data;
 		}
 		
-		if (root->data->getId() > id) {
+		if (id > root->data->getId()) {
+			if (root->right == nullptr) return nullptr;
 			if (root->right->data->getId() == id) {
 				return root->right->data;
 			}
@@ -68,7 +69,8 @@ private:
 			}
 		}
 
-		if (root->data->getId() < id) {
+		if (id < root->data->getId()) {
+			if (root->left == nullptr) return nullptr;
 			if (root->left->data->getId() == id) {
 				return root->left->data;
 			}
@@ -81,7 +83,8 @@ private:
 	}
 
 	Node* remove(int id, Node* root) {
-		if (root == nullptr) return root;
+		if (root == nullptr) 
+			return root;
 		else if (id < root->data->getId())
 			root->left = remove(id, root->left);
 		else if (id > root->data->getId())

@@ -1,61 +1,54 @@
-#include "removeContact.h"
-#include "main.h"
-#include <fstream>
-#include "BST.cpp"
 #include <vector>
-#include <sstream>
-#include <string>
+#include <fstream>
+#include <regex>
+#include "main.h"
+#include "BST.cpp"
+#include "removeContact.h"
 
-void removeContact() {
+void removeContact(BST* allContacts) {
 	system("cls");
 	showBanner("REMOVE CONTACT");
 
 	int contactID;
+	std::string idPattern = "[0-9]{4}";
 
-	std::cout << "\n\n Enter ID : ";
+id:
+	std::cout << "\n Enter ID : ";
 	std::cin >> contactID;
 
-	std::ifstream file;
-	file.open("contact_data.dat");
-	
-	BST list = BST();
+	if (!std::regex_match(std::to_string(contactID), std::regex(idPattern))) {
+		std::cout << "\n Enter Valid ID (4 digits)\n";
+		goto id;
+	}
+	std::cin.ignore();
 
-	if (file.is_open()) {
-		std::string line;
+	bool isRemoved = false;
 
-		while (std::getline(file, line)) {
-			std::stringstream ssin(line);
-			std::vector<std::string> dataSet;
-
-			while (ssin.good()) {
-				std::string temp;
-				ssin >> temp;
-				dataSet.push_back(temp);
-			}
-
-			list.insert(new Contact(std::stoi(dataSet[0]), dataSet[1], dataSet[2], dataSet[3]));
-		}
-	
-		file.close();
+	if (allContacts->search(contactID) == nullptr)
+		std::cout << " Contact with id " << contactID << " not found\n";
+	else {
+		allContacts->remove(contactID);
+		isRemoved = true;
 	}
 
-	list.remove(contactID);
-
-	std::vector<Contact*> allContacts = list.get();
+	std::vector<Contact*> allContact = allContacts->get();
 
 	std::ofstream file_out;
 	file_out.open("contact_data.dat", std::ios::out);
 
 	if (file_out.is_open()) {
 
-		for (int i = 0; i < allContacts.size(); i++) {
-			file_out << allContacts[i]->toString() << "\n";
+		for (int i = 0; i < allContact.size(); i++) {
+			file_out << allContact[i]->toString() << "\n";
 		}
 
 		file_out.close();
-		std::cout << "\n Contact with id " << contactID << " removed\n";
 	}
-	else {
+	else
 		std::cout << "Error opening the file\n";
-	}
+
+	if (isRemoved)
+		std::cout << "\n Contact with id " << contactID << " removed\n";
+
+	returnToMain();
 }
